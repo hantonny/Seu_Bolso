@@ -6,8 +6,8 @@ $somad = 0;
 $somar = 0;
 ?>
 <div class="container">
-<a href="http://localhost/controle_financeiro_laravel/transacao/public/adicionar" class="btn btn-primary">Adicionar Transação</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao/public/categoria" class="btn btn-secondary">Adicionar Categoria</a><br><br>
+<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/adicionar" class="btn btn-primary">Adicionar Transação</a>
+<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/categoria" class="btn btn-secondary">Adicionar Categoria</a><br><br>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
