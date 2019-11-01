@@ -45,6 +45,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Rotas da Categoria
-Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar');
+Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar')->middleware('auth');
 
 Auth::routes();
