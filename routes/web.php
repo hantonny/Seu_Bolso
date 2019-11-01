@@ -44,5 +44,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+//Rotas da Categoria
 Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar');
+
+Auth::routes();
