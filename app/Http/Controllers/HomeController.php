@@ -78,5 +78,13 @@ class HomeController extends Controller
         $array = array('resultado'=>$resultado);
         return view('alterar',$array,$categorias);
     }
+    public function gerarPDF(){
+        $lista = Transacao::All();
+        $array = array('lista'=>$lista);
+        $usuarios = User::All();
+        $array2 = array('usuarios'=>$usuarios);
+ 
+    return \PDF::loadView('gerarpdf', compact('lista', 'usuarios'))->stream();
+    }
 }
 

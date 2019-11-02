@@ -48,3 +48,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar')->middleware('auth');
 
 Auth::routes();
+
+Route::get('pdf', 'HomeController@gerarPDF')->name('pdf');
