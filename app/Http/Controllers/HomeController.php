@@ -83,8 +83,20 @@ class HomeController extends Controller
         $array = array('lista'=>$lista);
         $usuarios = User::All();
         $array2 = array('usuarios'=>$usuarios);
+        $categoria = Categoria::All();
+        $categorias = array('categoria'=>$categoria);
  
     return \PDF::loadView('gerarpdf', compact('lista', 'usuarios'))->stream();
+    }
+    public function graficoGerar(){
+        $lista = Transacao::All();
+        $array = array('lista'=>$lista);
+        $usuarios = User::All();
+        $array2 = array('user'=>$usuarios);
+        $categoria = Categoria::All();
+        $categorias = array('categoria'=>$categoria);
+        return view('grafico', compact('lista', 'usuarios', 'categoria')); 
+        
     }
 }
 

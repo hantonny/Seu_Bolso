@@ -50,3 +50,5 @@ Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar')->mid
 Auth::routes();
 
 Route::get('pdf', 'HomeController@gerarPDF')->name('pdf');
+
+Route::get('grafico', 'HomeController@graficoGerar')->name('grafico');
