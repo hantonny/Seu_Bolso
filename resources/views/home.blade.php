@@ -83,6 +83,10 @@ $somar = 0;
     <br>
     <h3>Total de Receita: <span  class="text-success"><?php echo 'R$ ' . number_format($somar, 2, ',', '.'); ?></span></h3>
     <h3>Total de Despesas: <span class="text-danger"><?php echo '-R$ ' . number_format($somad, 2, ',', '.'); ?></span></h3>
+    <h3>Total de Sombra: <span class="text-primary"><?php
+    $sobra = $somar - $somad;
+     echo ' R$ ' . number_format($sobra, 2, ',', '.'); 
+     ?></span></h3>
 </div>
 
 @endsection

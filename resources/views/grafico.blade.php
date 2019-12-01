@@ -40,7 +40,7 @@ $j = 0;
                 @if($item->id_user == $item2->id)
                     <?php
                         $somacat[$i] = $item->valor;
-                        $nomecat[$i] = $item->nome_categoria;
+                        $nomecat[$i] = $item->nome_categoria." - ".$item->descricao;
                         $desc[$i] = $item->descricao;
                     ?>
                          <tbody>
