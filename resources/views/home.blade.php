@@ -5,12 +5,14 @@
 $somad = 0;
 $somar = 0;
 ?>
-<div class="container">
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/adicionar" class="btn btn-primary">Adicionar Transação</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/categoria" class="btn btn-secondary">Adicionar Categoria</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/grafico" class="btn btn-warning">Gráfico por Categoria</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/pdf" class="btn btn-success" target="_blank">Gerar PDF</a><br><br>
-    <div class="row justify-content-center">
+<div class="container-fluid">
+<div class="col-sm-12 row justify-content-center mb-2">
+<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/adicionar" class="btn btn-primary col-sm-2 mt-2 mr-1">Adicionar Transação</a>
+<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/categoria" class="btn btn-secondary col-sm-2 mt-2 mr-1">Adicionar Categoria</a>
+<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/grafico" class="btn btn-warning col-sm-2 mt-2 mr-1">Gráfico por Categoria</a>
+<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/pdf" class="btn btn-success col-sm-2 mt-2 mr-1" target="_blank">Gerar PDF</a><br><br>
+</div>
+<div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -23,6 +25,7 @@ $somar = 0;
                     @endif
 
 @if(count($lista)>0)
+<div class="table-responsive">
 <table class="table">
   <thead class="thead">
     <tr>
@@ -67,7 +70,7 @@ $somar = 0;
       {{$item->nome_categoria}}
       </td>
       <td><a href="alterar/{{$item->id}}" class="btn btn-primary">Editar</a></td>
-      <td><a href="delete/{{$item->id}}" class="btn btn-danger">Remover</a></td>
+      <td><a href="delete/{{$item->id}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">Remover</a></td>
 </tr>
 @endif
 @endforeach
@@ -75,6 +78,7 @@ $somar = 0;
 @endforeach
   </tbody>
 </table>
+</div>
 
                 </div>
             </div>
