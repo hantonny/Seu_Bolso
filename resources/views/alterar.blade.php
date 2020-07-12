@@ -3,10 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-5 mb-5">
             <div class="card">
-                <div class="card-header">
-                <h2>Lista de Transações</h2></div>
                 <div class="card-body">
                     @if (session('status') && count($lista)>0)
                         <div class="alert alert-success" role="alert">
@@ -15,9 +13,11 @@
                     @endif
 					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <div class="container">
-<h1>Alterar</h1>
+
 <form method="POST" class="form">
 {{csrf_field()}}
+            <h1 class="font-weight-bold text-success">Editar <span class="font-weight-bold text-primary">Transação</span></h1>
+            <div class="row">
  			<div class="form-group mb-2 mx-sm-3">
  			<label><strong>Tipo de Transação</strong></label>
  			<select class="form-control col-12" id="tipo" name="tipo" required="">
@@ -50,9 +50,12 @@
 			@foreach($categoria as $cate)
 				<option value="{{$cate->nome_categoria}}">{{$cate->nome_categoria}}</option>
         	@endforeach
- 			</select>
- 			</div>
- 			<button type="submit" class="btn btn-success">Salvar Edição</button>
+             </select>
+
+             </div>
+            </div>
+            <a href="{{route('home')}}" class="btn btn-secondary mt-2 text-uppercase font-weight-bold">Voltar</a>
+            <button type="submit" class="btn btn-success font-weight-bold mt-2">SALVAR</button>
 </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

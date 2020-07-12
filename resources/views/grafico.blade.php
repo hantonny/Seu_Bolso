@@ -8,15 +8,15 @@ $desc = array();
 $i = 0;
 $j = 0;
 ?>
-<div class="container">
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/adicionar" class="btn btn-primary">Adicionar Transação</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/categoria" class="btn btn-secondary">Adicionar Categoria</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/pdf" class="btn btn-success" target="_blank">Gerar PDF</a><br><br>
-    <div class="row justify-content-center">
+<div class="container-fluid">
+    <div class="row justify-content-center mb-2">
+        <a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/adicionar" class="btn btn-primary col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Adicionar Transação</a>
+        <a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/categoria" class="btn btn-secondary col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Adicionar Categoria</a>
+        <a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/pdf" class="btn btn-success col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase" target="_blank">Gerar PDF</a>
+    </div>
+<div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                <h2>Grafico por Categoria</h2></div>
                 <div class="card-body">
                     @if (session('status') && count($lista)>0)
                         <div class="alert alert-success" role="alert">
@@ -25,14 +25,7 @@ $j = 0;
 
                     @endif
 @if(count($lista)>0)
-<table class="table table-sm col-4">
-  <thead class="thead">
-        <tr>
-        <th scope="col">Categoria</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Valor</th>
-        </tr>
-    </thead>
+    <h2 class="text-center">Grafico por Categoria</h2>
 @endif
     @foreach($usuarios as $item2)
         @if($item2->name == Auth::user()->name)
@@ -43,12 +36,6 @@ $j = 0;
                         $nomecat[$i] = $item->nome_categoria." - ".$item->descricao;
                         $desc[$i] = $item->descricao;
                     ?>
-                         <tbody>
-                            <tr>
-                            <td><?php  echo $nomecat[$i];?></td>
-                            <td><?php  echo $desc[$i];?></td>
-                            <td><?php  echo "R$ ".number_format($somacat[$i],2);?></td>
-                            </tr>
                      <?php
                         $i++;
                     ?>
@@ -56,37 +43,39 @@ $j = 0;
              @endforeach
         @endif
     @endforeach
-    </tbody>
-</table>
-    <br>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Categorias'],
-          <?php
-          for($i =0; $i < sizeof($somacat);$i++){
 
-             ?>
 
-            ['<?php echo $nomecat[$i];?>', <?php echo $somacat[$i];?>],
 
-          <?php
-          }
-          ?>
-        ]);
-
-        var options = {
-        pieHole: 0.4,
-        pieStartAngle: 100,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-    <div id="donutchart" style="width: 800px; height: 500px;"></div>
-</div>
+    <div class="col-sm-12">
+    <div id="donutchart" style="width: 1200px; height: 500px; padding: 0; margin: 0;"></div>
+    </div>
 @endsection
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Categorias'],
+      <?php
+      for($i =0; $i < sizeof($somacat);$i++){
+
+         ?>
+
+        ['<?php echo $nomecat[$i];?>', <?php echo $somacat[$i];?>],
+
+      <?php
+      }
+      ?>
+    ]);
+
+    var options = {
+    pieHole: 0.4,
+    pieStartAngle: 100,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>

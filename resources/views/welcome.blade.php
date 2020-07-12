@@ -8,11 +8,12 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #f8fafc;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -68,12 +69,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" class="font-weight-bold text-success text-uppercase">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Acesso</a>
+                        <a href="{{ route('login') }}" class="font-weight-bold text-primary text-uppercase">Acesso</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registro</a>
+                            <a href="{{ route('register') }}" class="font-weight-bold text-success text-uppercase">Registro</a>
                         @endif
                     @endauth
                 </div>
@@ -81,10 +82,10 @@
 
             <div class="content">
                 <div class="title m-b-dl">
-                    Sistema de Transações Financeiras Pessoais
+                    <h1><span class="text-success font-weight-bold display-1">Seu</span> <span class="font-weight-bold text-primary display-1">Bolso</span></h1>
                 </div>
-
-             
+                <h2>Organizador de finanças pessoais</h2>
+                <img src="../img/pessoa.svg" alt="">
             </div>
         </div>
     </body>

@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8 mt-5">
             <div class="card">
-                <div class="card-header">
-                <h2>Categorias</h2></div>
                 <div class="card-body">
                     @if (session('status') && count($lista)>0)
                         <div class="alert alert-success" role="alert">
@@ -14,15 +12,18 @@
                         </div>
                     @endif
 					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<div class="container">
-<h1>Adicionar</h1>
+<div class="container-fluid">
+<h1 class="mb-2 mx-sm-3 font-weight-bold text-success">Adicionar <span class="font-weight-bold text-primary">Categorias</span></h1>
 <form method="POST" class="form-inline">
 {{csrf_field()}}
  			<div class="form-group mb-2 mx-sm-3">
  				<label><strong>Nome da Categoria</strong></label>
- 				<input class="form-control col-12" type="text" name="nome_categoria" id="nome_categoria" required="">
- 			</div>
- 			<button type="submit" class="btn btn-success">Adicionar Categoria</button>
+                 <input class="form-control col-12" type="text" name="nome_categoria" id="nome_categoria" required="">
+                 <a href="{{route('home')}}" class="btn btn-secondary text-uppercase font-weight-bold mt-2 mr-3">Voltar</a>
+                 <button type="submit" class="btn btn-success text-uppercase font-weight-bold mt-2">Adicionar Categoria</button>
+            </div>
+
+
 </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

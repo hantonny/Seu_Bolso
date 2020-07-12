@@ -14,8 +14,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home','HomeController@home');
-Route::get('/home','HomeController@home');
+Route::get('/home','HomeController@home')->name('home');
 //Route para adicionar
 /*
 Route::get('/adicionar', 'HomeController@adicionar');
