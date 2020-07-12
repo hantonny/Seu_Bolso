@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<?php 
+<?php
 $somacat = array();
 $nomecat = array();
 $desc = array();
@@ -22,7 +22,7 @@ $j = 0;
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                        
+
                     @endif
 @if(count($lista)>0)
 <table class="table table-sm col-4">
@@ -67,15 +67,15 @@ $j = 0;
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Categorias'],
           <?php
-          foreach($lista as $item){
-              
+          for($i =0; $i < sizeof($somacat);$i++){
+
              ?>
 
-            ['<?php echo $nomecat[$j];?>', <?php echo $somacat[$j];?>],
+            ['<?php echo $nomecat[$i];?>', <?php echo $somacat[$i];?>],
 
           <?php
-            $j++;
-          }?>
+          }
+          ?>
         ]);
 
         var options = {
