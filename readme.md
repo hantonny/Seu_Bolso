@@ -18,5 +18,5 @@
 
 ---
 
-Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/" target="_blank"><b>Hantonny Korrea</b></a>
+Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
 
