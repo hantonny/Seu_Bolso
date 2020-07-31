@@ -7,10 +7,10 @@ $somar = 0;
 ?>
 <div class="container-fluid">
 <div class="row justify-content-center mb-2">
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/adicionar" class="btn btn-primary col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Adicionar Transação</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/categoria" class="btn btn-secondary col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Adicionar Categoria</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/grafico" class="btn btn-warning col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Gráfico por Categoria</a>
-<a href="http://localhost/controle_financeiro_laravel/transacao_laravel/public/pdf" class="btn btn-success col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase" target="_blank">Gerar PDF</a><br><br>
+<a href="{{'adicionar'}}" class="btn btn-primary col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Adicionar Transação</a>
+<a href="{{'categoria'}}" class="btn btn-secondary col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Adicionar Categoria</a>
+<a href="{{'grafico'}}" class="btn btn-warning col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase">Gráfico por Categoria</a>
+<a href="{{'pdf'}}" class="btn btn-success col-sm-2 mt-2 mr-1 font-weight-bold text-uppercase" target="_blank">Gerar PDF</a><br><br>
 </div>
 <div class="row justify-content-center">
         <div class="col-md-12">

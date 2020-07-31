@@ -23,7 +23,7 @@ Route::post('/adicionar.blade.php', 'HomeController@adicionar');
 Route::get('/adicionar.blade.php', 'HomeController@adicionar');
 */
 //Route para get e post
-Route::match(['get', 'post'],'adicionar','HomeController@adicionar');
+Route::match(['get', 'post'],'adicionar','HomeController@adicionar')->name('adicionar');
 
 //Route para deletar
 Route::get('/delete/{id}', 'HomeController@deletar');
@@ -44,10 +44,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Rotas da Categoria
-Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar')->middleware('auth');
+Route::match(['get', 'post'],'/categoria', 'CategoriaController@adicionar')->name('categoria')->middleware('auth');
 
 Auth::routes();
 
-Route::get('pdf', 'HomeController@gerarPDF')->name('pdf');
+Route::get('pdf', 'HomeController@gerarPDF')->name('pdf')->name('pdf');
 
 Route::get('grafico', 'HomeController@graficoGerar')->name('grafico');
