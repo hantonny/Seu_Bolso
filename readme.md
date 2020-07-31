@@ -1,23 +1,22 @@
 <h1 align="center">
-    <img alt="SeuBolso" title="#delicinha" src="/public/seu_bolso.png" width="350px" />
+    <img alt="SeuBolso" title="#seubolso" src="/public/seu_bolso.png" width="350px" />
 </h1>
-
-<h2 align="center">
-  🚧 Seu Bolso 🚧
-</h2>
 
 ## 💻 Projeto
 
-<h1>Organizador de finanças pessoais</h1>
-<p>Auxilia o usuário na organização das suas despesas mensais</p>
+<h2>Organizador de finanças pessoais</h2>
+<h3>Auxilia o usuário na organização das suas despesas mensais</h3>
 
-## 💻 Tecnologia
+## 💻 Tecnologias
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
+<h3>Este projeto foi desenvolvido com as seguintes tecnologias:</h3>
 
+-   [PHP](https://www.php.net)
 -   [Laravel](https://laravel.com/)
+-   [MySQL](https://www.mysql.com)
+-   [Bootstrap](https://getbootstrap.com)
 
 ---
 
-Feito com 💜 por <b>Hantonny Korrea</b>
+Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
 
